@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {setState,useEffect,useState} from "react"
+import RandomNumber from "./functions/RandomNumber"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
+// https://swapi.co/
+// https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+
+const App = () => {
+
+
+    const [person,setPerson] = useState({person:'No 1'})
+
+    const [count, setCount] = useState(0);
+
+    // Similar to componentDidMount and componentDidUpdate:
+    useEffect(() => {
+
+        fetch(`https://swapi.dev/api/people/${RandomNumber(100)}`)
+    .then(response => response.json())
+    .then(data => {setPerson(data)})
+      // Update the document title using the browser API
+      document.title = `You clicked ${count} times`;
+    },[count]);
+
+
+
+  
+        
+   
+
+
+
+ 
+
+ 
+return(<>
+<h1>HI</h1>
+<pre>{`${person}`}</pre>
+
+
+<pre>{JSON.stringify(person)}</pre>
+
+<div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
     </div>
-  );
-}
 
-export default App;
+</>)
+}
+export default App
+
+
+
+
+
+
