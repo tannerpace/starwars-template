@@ -1,7 +1,9 @@
-import React, {setState,useEffect,useState} from "react"
+import React, {useEffect,useState} from "react"
 import RandomNumber from "./functions/RandomNumber"
 import MyForm from "./components/TextInputWithFocusButton"  
-import {Box,TextField,Button} from "@mui/material"
+import {Box,Button} from "@mui/material"
+import Page from "./Pages"
+import Character from "./components/character"
 
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
@@ -11,56 +13,37 @@ import {Box,TextField,Button} from "@mui/material"
 const App = () => {
 
 
-    const [person,setPerson] = useState({person:'No 1'})
-
-    const [count, setCount] = useState(0);
-    const army = []
-
-
+  const [person,setPerson] = useState({person:'No 1'})
 
     // Similar to componentDidMount and componentDidUpdate:
-    useEffect(() => {
-
-        fetch(`https://swapi.dev/api/people/${RandomNumber(100)}`)
-    .then(response => response.json())
-    .then(data => {setPerson(data)})
-    .then(army.push(person))
-      // Update the document title using the browser API
-      document.title = `You clicked ${count} times`;
-
-      
-    },[count]);
-
+    
 
 
   
         
-   const man = JSON.stringify(person)
-   army.push(man)
 
+ 
 
+    
 
 
  
 
  
-return(<div>
-<h1 className="mdc-tooltip">GET A CHARACTER!</h1>
+return(
 
-
-
-<pre>{`${man}`}</pre>
-<pre>{`${army[0]}`}</pre>
+<Page>
 
 <div>
-      <p>You got a New Character {count} times</p>
-      <Button onClick={() => setCount(count + 1)}>
-        Click me
-      </Button>
-    </div>
-    <MyForm/>
-  
-</div>)
+{/* <h1 className="mdc-tooltip">GET A CHARACTER!</h1> */}
+
+
+
+{/* <h1>{`${person}`}</h1> */}
+<Character/>
+{/* <MyForm/> */}
+  </div>
+</Page>)
 }
 export default App
 

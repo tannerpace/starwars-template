@@ -23,10 +23,10 @@ function MyForm() {
          <Box>
          <Form>
         <label htmlFor="firstName">First Name</label>
-        <Field id="firstName" name="firstName" placeholder="Jane" />
+        <Field id="firstName" name="firstName" placeholder="Jane" required />
 
         <label htmlFor="lastName">Last Name</label>
-        <Field id="lastName" name="lastName" placeholder="Doe" />
+        <Field id="lastName" name="lastName" placeholder="Doe" required />
 
         <label htmlFor="email">Email</label>
         <Field
@@ -34,6 +34,7 @@ function MyForm() {
           name="email"
           placeholder="jane@acme.com"
           type="email"
+          required
         />
         <Button 
         fullWidth
