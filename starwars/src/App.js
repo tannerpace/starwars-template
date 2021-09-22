@@ -1,9 +1,12 @@
 import React, {useEffect,useState} from "react"
 import RandomNumber from "./functions/RandomNumber"
 import MyForm from "./components/TextInputWithFocusButton"  
-import {Box,Button} from "@mui/material"
+import {Box,Button, Typography} from "@mui/material"
 import Page from "./Pages"
 import Character from "./components/character"
+import quotes from "./functions/quotes"
+import Planet from "./components/planet"
+
 
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
@@ -16,33 +19,27 @@ const App = () => {
   const [person,setPerson] = useState({person:'No 1'})
 
     // Similar to componentDidMount and componentDidUpdate:
+    const getQuote = ()=>{ 
+      const quote = quotes()
+    return quote}
+   
     
 
-
-  
-        
-
- 
-
-    
-
-
- 
-
- 
 return(
 
 <Page>
 
-<div>
-{/* <h1 className="mdc-tooltip">GET A CHARACTER!</h1> */}
+<Box
+width="50%"
+margin="auto"><Typography
+ onCLick={getQuote()} 
+ >{`${getQuote()}`}
+ </Typography>
 
-
-
-{/* <h1>{`${person}`}</h1> */}
 <Character/>
+<Planet/>
 {/* <MyForm/> */}
-  </div>
+  </Box>
 </Page>)
 }
 export default App

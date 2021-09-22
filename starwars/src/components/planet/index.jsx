@@ -1,35 +1,31 @@
 import React, {useEffect,useState} from "react"
-import { Button,Box,ListItem} from "@mui/material";
-import StaticCharacter from "../staticCharacter";
+import { Button,Box,} from "@mui/material";
+import StaticPlanet from "../staticPlanet";
 
-const Character = ()=>{
+const Planet = ()=>{
   const [updates,setUpdates] = useState((0))
     const [count, setCount] = useState(0);
     
        if(count < 0){
          setCount(1)
        }
-const [person,setPerson] = useState({
-           name:"null",
-        gender:"null",
-    hair_color:"null",
-height:"null",mass:"null",starships:[]
+  const [planet,setPlanet] = useState({
+           climate:"null",
+        gravity:"null",
+    diameter:"null",
+name:"null",mass:"null",terrain:[]
 })
 
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
 
-        fetch(`https://swapi.dev/api/people/${count}`)
+        fetch(`https://swapi.dev/api/planets/${count}`)
     .then(response => response.json())
-    .then(data => {setPerson(data)})
+    .then(data => {setPlanet(data)})
  
       // Update the document title using the browser API
-      document.title = `You clicked ${count} times`;
+   
   },[count]);
-
-
- 
-
 return(
     <div>   
         <Box
@@ -37,18 +33,17 @@ return(
         margin="auto">
         <Button
     fullWidth
-    variant="fab"
+    variant="outlined"
     onClick={() => (setCount(count - 1),setUpdates(updates + 1))}>
         Previous character
          </Button>
-       <StaticCharacter person={person}/>
-   
-         <Button 
-         variant="fab"
+       <StaticPlanet planet={planet}/>
+   <Button 
+         variant="outlined"
          color="secondary"
          fullWidth
     onClick={() => (setCount(count + 1),setUpdates(updates + 1))}>
-      Next character
+      Next Planet
     </Button></Box></div>
 )
 
@@ -58,4 +53,4 @@ return(
 
 }
 
-export default Character
+export default Planet
