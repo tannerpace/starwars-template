@@ -1,8 +1,10 @@
 import React, {useEffect,useState} from "react"
 import { Button,Box,ListItem} from "@mui/material";
 import StaticCharacter from "../staticCharacter";
+import useStyles from "./styles"
 
 const Character = ()=>{
+  const classes = useStyles()
   const [updates,setUpdates] = useState((0))
     const [count, setCount] = useState(0);
     
@@ -10,6 +12,7 @@ const Character = ()=>{
          setCount(1)
        }
 const [person,setPerson] = useState({
+           id:`${count}`,
            name:"null",
         gender:"null",
     hair_color:"null",
@@ -33,18 +36,20 @@ height:"null",mass:"null",starships:[]
 return(
     <div>   
         <Box
+        paddingTop="2rem"
         width="30rem"
         margin="auto">
         <Button
     fullWidth
-    variant="fab"
+    variant="outlined"
     onClick={() => (setCount(count - 1),setUpdates(updates + 1))}>
         Previous character
          </Button>
        <StaticCharacter person={person}/>
    
          <Button 
-         variant="fab"
+           className={classes.buttonRoot}
+         variant="outlined"
          color="secondary"
          fullWidth
     onClick={() => (setCount(count + 1),setUpdates(updates + 1))}>
