@@ -29,13 +29,14 @@ name:"null",mass:"null",terrain:[]
 return(
     <div>   
         <Box
-        width="30rem"
-        margin="auto">
+        width="80%"
+        margin="auto"
+        minHeight="600px">
         <Button
     fullWidth
     variant="outlined"
     onClick={() => (setCount(count - 1),setUpdates(updates + 1))}>
-        Previous character
+        Previous Planet
          </Button>
        <StaticPlanet planet={planet}/>
    <Button 

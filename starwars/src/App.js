@@ -6,6 +6,9 @@ import Page from "./Pages"
 import Character from "./components/character"
 import quotes from "./functions/quotes"
 import Planet from "./components/planet"
+import {Link, Switch, Route} from "react-router-dom"
+import { AppBar } from '@mui/material';
+
 
 
 
@@ -19,25 +22,30 @@ const App = () => {
   const [person,setPerson] = useState({person:'No 1'})
 
     // Similar to componentDidMount and componentDidUpdate:
-    const getQuote = ()=>{ 
-      const quote = quotes()
-    return quote}
+ 
    
     
 
 return(
 
 <Page>
+  <AppBar
+  >
+    <Link to="/">People</Link>
+            <Link to="/planet">Planet</Link></AppBar>
+    
 
 <Box
 width="50%"
-margin="auto"><Typography
- onCLick={getQuote()} 
- >{`${getQuote()}`}
+margin="auto"><Typography padding="30px" color="blue"
+
+ >{`${quotes()}`}
  </Typography>
 
-<Character/>
-<Planet/>
+   <Switch>
+                <Route exact path="/"><Character /></Route>
+                <Route path="/planet"><Planet /></Route>
+            </Switch>
 {/* <MyForm/> */}
   </Box>
 </Page>)
