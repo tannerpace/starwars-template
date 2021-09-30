@@ -53,10 +53,10 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import ShareIcon from "@material-ui/icons/Share";
-import ButtonRounded from "components/Common/ButtonRounded";
+import ButtonRounded from "../../components/common/ButtonRounded";
 import PropTypes from "prop-types";
 import { useState } from "react";
-
+import React from "react";
 import useStyles from "./styles";
 
 function TabPanel(props) {

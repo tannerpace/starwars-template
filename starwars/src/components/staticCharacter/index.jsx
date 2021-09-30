@@ -1,20 +1,38 @@
 import React from "react";
-import { ListItem } from "@mui/material";
+import { Input, ListItem as TextFeild, TextField, Button } from "@mui/material";
 import { Box } from "@mui/system";
-
+import CustomForm from "../CustomForm";
 
 const StaticCharacter = (props) => {
-    console.log(props.person)
+  // constants
+  const key = props.key;
+  const person = props.props;
 
-return(  
-        <Box
-        margin="auto"
-        width="70%">
-        <ListItem>{props.person.name}</ListItem>
-        <ListItem>{props.person.gender}</ListItem>
-        <ListItem>{props.person.hair_color}</ListItem>
-        <ListItem>{props.person.height}</ListItem>
-        <ListItem>{props.person.mass}</ListItem>
-        </Box>  )
-}
-export default StaticCharacter
+  const { name } = person;
+  const { gender } = person;
+  const { age } = person;
+  const { height } = person;
+  const { skin_color } = person;
+  const { mass } = person;
+  const { eye_color } = person;
+
+  //   functions
+
+  // render statement
+  return (
+    <Box margin="auto" width="70%">
+      {/* <Button type="submit">Submit</Button> */}
+      <CustomForm
+        key={key}
+        character={name}
+        skin_color={skin_color}
+        gender={gender}
+        age={age}
+        height={height}
+        mass={mass}
+        eye_color={eye_color}
+      />
+    </Box>
+  );
+};
+export default StaticCharacter;

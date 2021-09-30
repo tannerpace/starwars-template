@@ -6,28 +6,26 @@ import useStyles from "./styles";
 const Character = () => {
   const classes = useStyles();
   const [updates, setUpdates] = useState(0);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
-  if (count < 0) {
-    setCount(1);
-  }
   const [person, setPerson] = useState({
-    id: `${count}`,
-    name: "null",
-    gender: "null",
-    hair_color: "null",
-    height: "null",
-    mass: "null",
-    starships: [],
+    // name: "null",
+    // gender: "null",
+    // hair_color: "null",
+    // height: "null",
+    // mass: "null",
+    // starships: [],
   });
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch(`https://swapi.dev/api/people/${count}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPerson(data);
-      });
+    if (count > 0) {
+      fetch(`https://swapi.dev/api/people/${count}/?format=json`)
+        .then((response) => response.json())
+        .then((data) => {
+          setPerson(data);
+        });
+    }
 
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
@@ -46,7 +44,8 @@ const Character = () => {
             Previous Character
           </Button>
         )}
-        <StaticCharacter person={person} />
+        {console.log("parent", person)}
+        <StaticCharacter props={person} />
 
         <Button
           className={classes.buttonRoot}
