@@ -3,8 +3,6 @@ import { ListItem } from "@mui/material";
 import { Box } from "@mui/system";
 
 const StaticSpecies = (props) => {
-  console.log(props.species);
-
   return (
     <Box margin="auto" width="80%">
       <ListItem>Name : {props.species.name}</ListItem>
