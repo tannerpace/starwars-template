@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import RandomNumber from "./functions/RandomNumber";
-import MyForm from "./components/TextInputWithFocusButton";
-import { AppBar, Box, Button, Typography } from "@mui/material";
+import React from "react";
+// import RandomNumber from "./functions/RandomNumber";
+// import MyForm from "./components/TextInputWithFocusButton";
+import { AppBar, Box, Button } from "@mui/material";
 import Page from "./Pages";
 import Character from "./components/character";
 import quotes from "./functions/quotes";
