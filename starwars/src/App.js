@@ -13,8 +13,6 @@ import { Link, Switch, Route } from "react-router-dom";
 // https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
 
 const App = () => {
-  const [person, setPerson] = useState({ person: "No 1" });
-
   // Similar to componentDidMount and componentDidUpdate:
   const getQuote = () => {
     const quote = quotes();
@@ -35,6 +33,7 @@ const App = () => {
               <Link to="/character">Character</Link>
             </Button>
           </AppBar>
+          <h1>{getQuote()}</h1>
         </Box>
       </Page>
       <Switch>

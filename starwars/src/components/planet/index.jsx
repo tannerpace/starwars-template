@@ -6,9 +6,6 @@ const Planet = () => {
   const [updates, setUpdates] = useState(0);
   const [count, setCount] = useState(0);
 
-  if (count < 0) {
-    setCount(1);
-  }
   const [planet, setPlanet] = useState({
     climate: "null",
     gravity: "null",
@@ -30,9 +27,9 @@ const Planet = () => {
   }, [count]);
   return (
     <div>
-      <h1>Planet works!</h1>
       <Box width="30rem" margin="auto">
-        {count !== 0 && (
+        {count <= 1 && <Box padding="24.4px" border="solid red 0px"></Box>}
+        {count > 1 && (
           <Button
             fullWidth
             variant="outlined"
@@ -43,6 +40,7 @@ const Planet = () => {
         )}
 
         <StaticPlanet planet={planet} />
+        {count}
         <Button
           variant="outlined"
           color="secondary"
@@ -51,6 +49,7 @@ const Planet = () => {
         >
           Next Planet
         </Button>
+        <h1>Planet works!</h1>
       </Box>
     </div>
   );
