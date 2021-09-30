@@ -32,16 +32,16 @@ const App = () => {
               <Link to="/">Planet</Link>
             </Button>
             <Button>
-              <Link to="Character">Character</Link>
+              <Link to="/character">Character</Link>
             </Button>
           </AppBar>
         </Box>
       </Page>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Planet />
         </Route>
-        <Route path="Character" exact>
+        <Route path="/character" exact>
           <Character />
         </Route>
       </Switch>
