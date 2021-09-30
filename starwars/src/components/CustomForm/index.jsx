@@ -5,7 +5,7 @@ import { Formik, Field, Form } from "formik";
 const CustomForm = (props) => {
   const onSubmit = async (values) => {
     try {
-      setTimeout(alert(JSON.stringify(values)), 99999);
+      setTimeout(console.log(`Form values`, values), 99999);
     } catch (error) {
       alert(error);
     }
@@ -22,7 +22,11 @@ const CustomForm = (props) => {
     >
       {(formik) => {
         return (
-          <Form>
+          <Form
+            onChange={(e) => {
+              formik.setFieldValue("character", e);
+            }}
+          >
             <Field
               disabled
               label={"name"}
@@ -31,14 +35,6 @@ const CustomForm = (props) => {
               variant="filled"
               color="secondary"
             />
-            {/* <TextField
-              disabled
-              label={"name"}
-              name="character"
-              value={props.character}
-              variant="filled"
-              color="secondary"
-            /> */}
 
             <Field
               disabled

@@ -21,7 +21,7 @@ const StaticCharacter = (props) => {
   // render statement
   return (
     <Box margin="auto" width="70%">
-      {/* <Button type="submit">Submit</Button> */}
+      {" "}
       <CustomForm
         key={key}
         character={name}
