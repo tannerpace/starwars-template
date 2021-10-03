@@ -1,38 +1,50 @@
 import React from "react";
-import { Input, ListItem as TextFeild, TextField, Button } from "@mui/material";
+
 import { Box } from "@mui/system";
-import CustomForm from "../CustomForm";
+import AddCharacterComponent from "../AddCharacterComponent";
 
-const StaticCharacter = (props) => {
-  // constants
-  const key = props.key;
+const StaticCharacter = (props, children, sendArmyUp) => {
   const person = props.props;
-
-  const { name } = person;
-  const { gender } = person;
-  const { age } = person;
-  const { height } = person;
-  const { skin_color } = person;
-  const { mass } = person;
-  const { eye_color } = person;
-
-  //   functions
+  const {
+    name,
+    height,
+    mass,
+    hair_color,
+    skin_color,
+    eye_color,
+    birth_year,
+    gender,
+    homeworld,
+    films,
+    species,
+    vehicles,
+    starships,
+  } = person;
 
   // render statement
   return (
-    <Box margin="auto" width="70%">
-      {" "}
-      <CustomForm
-        key={key}
-        character={name}
-        skin_color={skin_color}
-        gender={gender}
-        age={age}
-        height={height}
-        mass={mass}
-        eye_color={eye_color}
-      />
-    </Box>
+    <>
+      <Box margin="auto" width="70%">
+        <AddCharacterComponent
+          name={name}
+          skin_color={skin_color}
+          gender={gender}
+          birth_year={birth_year}
+          height={height}
+          mass={mass}
+          eye_color={eye_color}
+          homeworld={homeworld}
+          species={species}
+          vehicles={vehicles}
+          starships={starships}
+          films={films}
+          hair_color={hair_color}
+          sendArmy={(army) => army}
+        >
+          {children}
+        </AddCharacterComponent>
+      </Box>
+    </>
   );
 };
 export default StaticCharacter;

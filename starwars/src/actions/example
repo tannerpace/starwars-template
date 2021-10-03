@@ -1,0 +1,11 @@
+axios.post("http://****", {
+        data: this.state.data,
+        more: this.state.more,
+        etc: { example: "of", object: this.state.obj }
+      })
+      .then(response => {
+        if (response.status === 200) {
+          //do something with response.data
+          //this.setState({ data: response.data})
+        }
+      });

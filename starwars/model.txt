@@ -1,0 +1,11 @@
+birth_year: "41.9BBY"
+created: "2014-12-10T15:18:20.704000Z"
+edited: "2014-12-20T21:17:50.313000Z"
+eye_color: "yellow"
+films: (4) ['https://swapi.dev/api/films/1/', 'https://swapi.dev/api/films/2/', 'https://swapi.dev/api/films/3/', 'https://swapi.dev/api/films/6/']
+gender: "male"
+hair_color: "none"
+height: "202"
+homeworld: "https://swapi.dev/api/planets/1/"
+mass: "136"
+name: "Darth Vader"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Box, ListItem } from "@mui/material";
+import { Button, Box, ListItem, Typography } from "@mui/material";
 import StaticCharacter from "../staticCharacter";
 import useStyles from "./styles";
 
@@ -7,14 +7,22 @@ const Character = () => {
   const classes = useStyles();
   const [updates, setUpdates] = useState(0);
   const [count, setCount] = useState(0);
+  let army = [];
 
   const [person, setPerson] = useState({
-    // name: "null",
-    // gender: "null",
-    // hair_color: "null",
-    // height: "null",
-    // mass: "null",
-    // starships: [],
+    name: "",
+    height: "",
+    mass: "",
+    hair_color: "",
+    skin_color: "",
+    eye_color: "",
+    birth_year: "",
+    gender: "",
+    homeworld: "",
+    films: [""],
+    species: [""],
+    vehicles: [""],
+    starships: [""],
   });
 
   // Similar to componentDidMount and componentDidUpdate:
@@ -44,8 +52,8 @@ const Character = () => {
             Previous Character
           </Button>
         )}
-        {console.log("parent", person)}
-        <StaticCharacter props={person} />
+        {/* {console.log("parent", person)} */}
+        <StaticCharacter props={person} sendArmyUp={(army) => army} />
 
         <Button
           className={classes.buttonRoot}
@@ -56,6 +64,7 @@ const Character = () => {
         >
           Next character
         </Button>
+        <Typography>{(army[1], army[0], army[3])}</Typography>
       </Box>
     </div>
   );
