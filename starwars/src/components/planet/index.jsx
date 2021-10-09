@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Box } from "@mui/material";
-import StaticPlanet from "../staticPlanet";
+import StaticPlanet from "../StaticPlanet";
 
 const Planet = () => {
   const [updates, setUpdates] = useState(0);

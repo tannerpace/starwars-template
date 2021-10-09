@@ -3,8 +3,6 @@ import { ListItem } from "@mui/material";
 import { Box } from "@mui/system";
 
 const StaticPlanet = (props) => {
-  // console.log(props.planet)
-
   return (
     <Box margin="auto" width="80%">
       <ListItem>Name : {props.planet.name}</ListItem>

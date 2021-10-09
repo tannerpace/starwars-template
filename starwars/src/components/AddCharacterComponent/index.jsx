@@ -26,14 +26,15 @@ const AddCharacterComponent = (props) => {
   // vehicles: `${props.vehicles}`,
   // starships: `${props.starships}`,
 
-  const saveArmy = localStorage.setItem("army", `${army}`);
-
   const pronoun =
     props.gender === "female" && !undefined ? "Female" : `${props.gender}`;
   const pronoun2 = props.gender === "female" && !undefined ? "She" : "He";
   const addCharacter = () => {
     setArmy([...army, props]);
   };
+  const armyMap = () => army.map((x) => x.name);
+
+  const saveArmy = localStorage.setItem("army", `${army}`);
 
   return (
     <>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Box, ListItem, Typography } from "@mui/material";
-import StaticCharacter from "../staticCharacter";
+import StaticCharacter from "../StaticCharacter";
 import useStyles from "./styles";
 
 const Character = () => {
@@ -52,7 +52,7 @@ const Character = () => {
             Previous Character
           </Button>
         )}
-        {/* {console.log("parent", person)} */}
+
         <StaticCharacter props={person} sendArmyUp={(army) => army} />
 
         <Button
@@ -64,7 +64,6 @@ const Character = () => {
         >
           Next character
         </Button>
-        <Typography>{(army[1], army[0], army[3])}</Typography>
       </Box>
     </div>
   );
